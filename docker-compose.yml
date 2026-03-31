@@ -13,7 +13,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
     healthckeck:
       test: ["CMD-SHELL","pg_isready -U acme_user -d acme_database"]
-      insterval: 10s
+      interval: 10s
       timeout: 5s
       retries: 5
 
