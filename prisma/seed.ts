@@ -10,7 +10,7 @@ async function main() {
 
     const user = await prisma.user.upsert({
         where: { email: 'admin@acme.com' },
-        update: {}
+        update: {},
         create: {
             name: 'Admin',
             email: 'admin@acme.com',
@@ -51,7 +51,7 @@ async function main() {
     const invoiceData = [{
         amount: 15785,
         status: InvoiceStatus.PENDENTE,
-        date: '2026-17-05',
+        date: '2026-07-05',
         customer: customers[1]
     }, {
         amount: 15722,
@@ -61,7 +61,7 @@ async function main() {
     }, {
         amount: 1585,
         status: InvoiceStatus.PENDENTE,
-        date: '2026-15-05',
+        date: '2026-10-05',
         customer: customers[1]
     }, {
         amount: 15485,
@@ -76,22 +76,22 @@ async function main() {
     }, {
         amount: 15995,
         status: InvoiceStatus.PAGO,
-        date: '2026-21-05',
+        date: '2026-03-05',
         customer: customers[1]
     }, {
         amount: 1125,
         status: InvoiceStatus.PENDENTE,
-        date: '2026-22-05',
+        date: '2026-02-05',
         customer: customers[0]
     }, {
         amount: 157805,
         status: InvoiceStatus.PENDENTE,
-        date: '2026-29-05',
+        date: '2026-09-05',
         customer: customers[0]
     }, {
         amount: 14785,
         status: InvoiceStatus.PAGO,
-        date: '2026-30-05',
+        date: '2026-03-05',
         customer: customers[0]
     }, {
         amount: 12385,
@@ -101,7 +101,7 @@ async function main() {
     }, {
         amount: 19785,
         status: InvoiceStatus.PENDENTE,
-        date: '2026-15-05',
+        date: '2026-11-05',
         customer: customers[0]
     }, {
         amount: 1555585,
@@ -111,13 +111,13 @@ async function main() {
     }, {
         amount: 1535,
         status: InvoiceStatus.PAGO,
-        date: '2026-15-05',
+        date: '2026-12-05',
         customer: customers[0]
     }, {
 
     }];
 
-    for (const data of invoicesData) {
+    for (const data of invoiceData) {
         await prisma.invoice.create({
             data: {
                 amount: data.amount,
@@ -128,7 +128,7 @@ async function main() {
         });
     };
 
-    console.log(`${invoicesData.length} faturas criadas.`);
+    console.log(`${invoiceData.length} faturas criadas.`);
 
     const revenueData = [
         { month: 'Jan', revenue: 151554 },
