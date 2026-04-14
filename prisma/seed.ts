@@ -23,15 +23,15 @@ async function main() {
     const customer_data = [{
         name: 'Anderson Campelo',
         email: 'anderson@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Anderson+Campelo&background=random'
+        imageUrl: 'https://ui-avatars.com/api/?name=Anderson+Campelo&background=random'
     }, {
         name: 'Livya Campelo',
         email: 'livya@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Livya+Campelo&background=random'
+        imageUrl: 'https://ui-avatars.com/api/?name=Livya+Campelo&background=random'
     }, {
         name: 'Beth Campelo',
         email: 'beth@email.com',
-        imageUrl: 'https://ui-avatars.com/api/?nome=Beth+Campelo&background=random'
+        imageUrl: 'https://ui-avatars.com/api/?name=Beth+Campelo&background=random'
     }];
 
     const customers = [];
@@ -149,7 +149,7 @@ async function main() {
     for (const data of revenueData){
         await prisma.revenue.upsert({
             where: { month: data.month },
-            update: { revunue: data.revenue },
+            update: { revenue: data.revenue },
             create : data
         });
     };
